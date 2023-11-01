@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatable" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Predictor</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Chat Bot
+        </div>
+
+        <form action="/" method="post">
+            <div class="inputfield">
+                <label for="ram">Enter Question</label>
+                <input type="text" class="input" name="question" required>               
+            </div>
+            <div class="inputfield">
+                <input type="submit" value="Send" class="btn" >              
+            </div>
+
+
+
+            
+        </form>
+        <div class="result">
+            <p>
+                {{ pred }}
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const ratingInputs = document.querySelectorAll('.rating');
+    
+        ratingInputs.forEach(input => {
+            input.addEventListener('click', () => {
+                ratingInputs.forEach(otherInput => {
+                    if (otherInput !== input) {
+                        otherInput.disabled = true;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
